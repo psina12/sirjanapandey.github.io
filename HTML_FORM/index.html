@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML_FORM</title>
+    <link href="styleme.css" type="text/css" rel="stylesheet" />
+  </head>
+  
+  <body>
+    <div class="content">
+      <div class="header">
+        <img src="images/nerdluv.png" alt="header-logo" /><br />where meek geeks
+        meet
+      </div>
+      <div class="Forms">
+        <form action="http://mumstudents.org/params.php">
+          <fieldset>
+            <legend>New User Signup:</legend>
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" name="Name" /><br /> <br />
+
+            <label for="Gender">Gender:</label>
+
+            <input type="radio" id="male" name="male" />
+            <label for="male" class="radio">Male</label>
+            <input type="radio" id="female" name="female" checked="checked" />
+            <label for="male" class="radio">Female</label><br /><br />
+
+            <label for="Age">Age:</label>
+            <input
+              type="text"
+              id="Age"
+              maxlength="2"
+              size="6"
+              name="Age"
+            /><br /><br />
+
+            <label for="Personality type">Personality type:</label>
+            <input type="text" id="Personality type" name="Personality type" />
+            <a href="http://www.humanmetrics.com/personality"
+              >(Don't know your type)</a
+            >
+            <br /> <br />
+
+            <label for="Favorite OS:">Favorite OS:</label>
+            <select id="Favorite OS" name="Favorite OS">
+              <option value="windows">windows</option>
+              <option value="Mac">Mac</option>
+              <option value="Linux">Linux</option>
+              <option value="Unix">Unix</option>
+            </select>
+            <br />
+            <br />
+
+            <label for="Seeking age:">Seeking age:</label>
+            <input
+              type="text"
+              id="minAge"
+              maxlength="2"
+              size="6"
+              placeholder="min"
+            />
+            to
+            <input
+              type="text"
+              id="maxAge"
+              maxlength="2"
+              size="6"
+              placeholder="max"
+            /><br /><br />
+
+            <input type="submit" value="Submit" />
+          </fieldset>
+        </form>
+      </div>
+
+      <div class="footer">
+        <div class="footer-notes">
+          <p>
+            This page is for single nerds to meet and date each other! Type in
+            your personal information and wait for the nerdly luv to begin!<br />Thank
+            you for using our site.
+          </p>
+          <p>Results and Page (C) Copyright NerdLuv Inc.</p>
+        </div>
+
+        <div class="Back-link">
+          <a href="https://sirjanapandey.github.io"
+            ><img src="images/back.gif" alt="back"
+          /></a>
+          Back to front page
+        </div>
+
+        <div class="validation">
+          <a
+            href="http://validator.w3.org/nu/?doc=https://sirjanapandey.github.io/HTML_Form/index.html"
+          >
+            <img src="images/w3c-html5.png" alt="HTML validator" />
+          </a>
+
+          <a
+            href="http://jigsaw.w3.org/css-validator/validator?uri=https://sirjanapandey.github.io/HTML_Form/styleme.css"
+          >
+            <img src="images/w3c-css.png" alt="CSS validator" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

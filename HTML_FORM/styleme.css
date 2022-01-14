@@ -1,0 +1,59 @@
+
+  .header{
+    padding-bottom: 50px;
+}
+legend{
+  background-color: rgb(218, 221, 228);
+  font-size:medium;
+  box-shadow: 2px 2px rgb(95, 93, 93);    
+}
+label{
+  font-size: medium;
+  font-weight: bold;    
+  display: inline-block;
+  width:130px;
+  text-align: left;
+}
+.content{    
+  width: 600px;  margin: auto;
+  margin-top: 45px; 
+  clear: both;   
+}
+
+fieldset{
+  background-color: #E0E1FF;
+  box-shadow: 2px 2px #5e5e6d;
+  border-radius: 8px;
+  border: none;
+  padding: 25px;
+      
+}
+button{
+  background-color: #da6571;
+  font-size: medium;
+  font-weight: bold;
+}
+.footer{
+  margin: auto;
+  width: 600px;
+  padding: 20px;
+}
+
+.Back-link{
+   color: red;
+   padding-bottom: 40px;
+   vertical-align:middle;
+}
+a:link {
+  color: red;
+  text-decoration: none;
+}
+a:visited {
+  color: red;
+}
+
+
+
+
+
+
