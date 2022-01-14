@@ -1,15 +1,16 @@
 body {
-  background-image: url("images/background.png");
-  font-size: 8pt;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 8pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url("images/background.png");
+  
 }
 
 .banner {
   height: 50px;
-  background-image: url("images/bannerbg.png");
   text-align: center;
+  background-image: url("images/bannerbg.png");
 }
 .clear {
   clear: both;
@@ -34,11 +35,11 @@ h1 {
   margin: auto;
   border-radius: 20px;
 }
-.content .review-content {
+.content div.reviewcontent {
   width: 550px;
   float: left;
 }
-.content div .review-content h2 {
+.content div.reviewcontent h2 {
   font-size: 48pt;
   height: 83px;
   background-image: url("images/rbg.png");
@@ -46,7 +47,7 @@ h1 {
   margin: 0%;
   border-radius: 20px 0 0 0;
 }
-.content div .review-content img h2 {
+.content div.reviewcontent h2 img {
   height: 83px;
   border-radius: 20px 0 0 0;
   float: left;
@@ -54,7 +55,7 @@ h1 {
 .reviews {
   padding: 1%;
   background: none;
-}  
+}
 .leftreview,
 .rightreview {
   width: 47%;
@@ -85,16 +86,16 @@ h1 {
   margin-right: 5px;
 }
 
-.content div.general-overview {
+.content div.overview {
   width: 250px;
   float: left;
   background-color: #a2b964;
   border-radius: 0 20px 0 0;
 }
-div.general-overview > img {
+div.overview > img {
   border-radius: 0 20px 0 0;
 }
-div.general-overview div.details {
+div.overview div.details {
   padding: 10pt;
   font-size: 8pt;
   font-family: Arial, Helvetica, sans-serif;
