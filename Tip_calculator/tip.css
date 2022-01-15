@@ -1,0 +1,15 @@
+
+body, input, button {
+    font-family: "Century Gothic",sans-serif;
+    font-size: 18pt;
+}
+
+
+div {
+    margin: 1em;
+}
+
+body {
+    margin-right: 25%;
+    margin-left: 25%;
+}
