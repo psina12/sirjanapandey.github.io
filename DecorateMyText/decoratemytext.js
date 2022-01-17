@@ -1,7 +1,7 @@
 
 
 
-function biggerDecorations() {
+function Decorations() {
     
     var text = document.getElementById("inputTextArea");
     var size = window.getComputedStyle(text).fontSize;
@@ -16,7 +16,7 @@ function setTimer() {
 
 }
 
-function blingCheckbox(checkbox) {
+function bling(checkbox) {
     var text = document.getElementById("inputTextArea").style;
     if (checkbox.checked) {
         text.fontWeight = "bold";
