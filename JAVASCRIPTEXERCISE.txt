@@ -1,0 +1,46 @@
+1. What is the difference between the following 2 statements?
+setTimeout(booyah, 2000);
+setTimeout(booyah(), 2000);
+
+Ans: First statement will wait for 2 seconds and second statement 
+will immediately call the function.
+
+
+2.What do the following 2 alerts display (answer without running the code)?
+var myfunc = function(a, x) 
+{ return a * x;
+};
+var x = myfunc(2, 3); 
+var y = myfunc; 
+alert(x); 
+alert(y(2,3));
+
+Ans: 6 will be displayed.
+
+
+3.Write functions booyah1 and booyah2 so that in both cases below, an alert box comes up after 2 seconds that says “BOOYAH!”
+setTimeout(booyah1, 2000);
+setTimeout(booyah2(), 2000);
+
+Ans:
+
+ function booyah1(){
+alert(“BOOYAH!”);
+}
+
+ function booyah2(){
+ setTimeout(function () {
+ alert("BOOYAH!");
+ }, 2000);
+}
+
+
+4:What is "Unobtrusive Javascript"? What is the practical application of Unobtrusive Javascript (and the reasons for using it)?
+
+Ans: Unobtrusive Javascript is the practise of separating web pages into 3 different pages.
+Content (HTML)
+Presentation (CSS) 
+Behavior (JavaScript)
+
+It is because site vistors will not shut out even if Js is not working correctly for them and page load time is better.
+It is also easy to update code as all the Javascript logic is present in seperate file.
