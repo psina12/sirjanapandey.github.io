@@ -1,0 +1,153 @@
+1. Determine what this Javascript code will print out (without running it):
+
+x = 1;
+var a = 5;
+var b = 10;
+var c = function(a, b, c) {
+  var x = 10;
+  document.write(x);
+  document.write(a);
+  var f = function(a, b, c) {
+     b = a;
+     document.write(b);
+     b = c;
+     var x = 5;
+  }
+  f(a,b,c);
+  document.write(b);
+ }
+c(8,9,10);
+document.write(b);
+document.write(x); 
+
+Ans: "10 8 8 9 10 1" will be written to the document.
+
+
+2.What is the difference between a method and function?
+
+Ans:
+  Method runs inside the object which is the property of object and has function.
+
+syntax:
+var name = {
+
+ methodName: function(parameters){
+  statements;
+
+}
+};
+
+}
+
+ Function is a set of statements that performs a task or calculates a value.
+
+syntax:
+function functionname(){
+
+ content
+
+}
+
+3.What does 'this' refer to when used in a Java method?
+
+Ans: 'this' is a reference variable which refers to the current object.
+
+
+4.What does 'this' refer to when used in a JavaScript method?
+
+Ans: The JavaScript this keyword refers to the object it belongs to.
+
+ It has different values depending on where it is used:
+
+-In a method, this refers to the owner object.
+-Alone, this refers to the global object.
+-In a function, this refers to the global object.
+-In a function, in strict mode, this is undefined.
+-In an event, this refers to the element that received the event.
+-Methods like call(), and apply() can refer this to any object.
+
+
+5. What does 'this' refer to when used in a JavaScript constructor function?
+
+Ans: In a constructor function this does not have a value. It is a substitute for the new object.
+
+
+6. Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing keyword 'this'.
+When f is called by x.f( ), what does 'this' refer to?
+
+Ans: this refers to x object.
+
+7. What is a free variable in JavaScript?
+
+Ans. A free variable is simply a variable which is not declared inside a given function, but is used inside it.
+
+8.Create an object that has properties with name = "fred" and major="music"and a property that is a function
+that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
+
+Ans:
+
+var obj = {
+  name: "fred",
+  major: "music",
+  sum:function(x,y){
+    if(x==y){
+    return x*y;
+}  
+ return Math.min(x,y);
+  
+}
+ }
+
+
+9. Write Javascript code for creating three Employee objects using the "new" keyword and a constructor function.
+Employee objects have the following fields: name, salary, position.
+
+Ans: 
+
+ class Employee{
+   constructor(name,salary,position){
+        this.name=name;
+        this.salary=salary;
+        this.position=position;
+}
+}
+
+ var emp1= new Employee("Harry", 25000, "Manager")
+ var emp1= new Employee("John", 10000, "Software Developer")
+ var emp1= new Employee("Ashley", 15000, "QA tester")
+
+
+10. Write a Javascript function that takes any number of input arguments and returns the product of the
+arguments.
+
+Ans:
+
+function myfunction (...args){
+
+ return args.reduce(function (acc,cur){
+  
+  return acc*cur;
+
+})
+   
+}
+
+console.log(myfunction(5,6));
+
+
+11.Write an arrow function that returns the maximum of its three input arguments  
+
+Ans:var max = (x, y, z) => Math.max(x, y, z);
+
+
+
+
+
+
+
+
+
+
+
+
+
