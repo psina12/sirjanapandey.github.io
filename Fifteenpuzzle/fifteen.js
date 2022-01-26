@@ -1,6 +1,7 @@
 $(function() {
-    var vacantX = 300;
-    var vacantY = 300;
+    "use strict";
+    var varx = 300;
+    var vary = 300;
     $("#puzzlearea").children().each(function(i) {
         let x = ((i % 4) * 100);
         let y = (Math.floor(i / 4) * 100);
@@ -18,32 +19,31 @@ $(function() {
 
     });
 
-  
-    //when moveable title is hovered
+     //clicking of movable tile
+    $(".puzzlepiece").click(function() {
+        let tempX = parseInt($(this).attr("x"));
+        let tempY = parseInt($(this).attr("y"));
+        if (Moveable(tempX, varx, tempY, vary)) {
+            ({ varx, vary } = MoveTile(this, varx, vary, tempX, tempY));
+
+        } else {
+            console.log(" Not moveable");
+        }
+
+    });
+
+    //hovering of movable tile
     $(".puzzlepiece").hover(function() {
         let tempX = parseInt($(this).attr("x"));
         let tempY = parseInt($(this).attr("y"));
-        if (canMove(tempX, vacantX, tempY, vacantY)) {
+        if (Moveable(tempX, varx, tempY, vary)) {
             $(this).css({ "border-color": "red", "color": "red" });
         }
     }, function() {
         $(this).css({ "border-color": "black", "color": "black" });
     });
 
-    //When moveable title is clicked
-    $(".puzzlepiece").click(function() {
-        let tempX = parseInt($(this).attr("x"));
-        let tempY = parseInt($(this).attr("y"));
-        if (canMove(tempX, vacantX, tempY, vacantY)) {
-            ({ vacantX, vacantY } = TileMoveFunc(this, vacantX, vacantY, tempX, tempY));
-
-        } else {
-            console.log(" can't move");
-        }
-
-    });
-
-      //Shuffling the tiles
+      //tiles shuffling
       $("#controls").click(function() {
         const val = [0, 100, 200, 300];
 
@@ -54,7 +54,7 @@ $(function() {
             let tempX = val[randomX];
             let tempY = val[randomY];
             let tile = "#square_" + tempX + "_" + tempY;
-            ({ vacantX, vacantY } = TileMoveFunc(tile, vacantX, vacantY, tempX, tempY));
+            ({ varx, vary } = MoveTile(tile, varx, vary, tempX, tempY));
         }
 
 
@@ -64,18 +64,21 @@ $(function() {
 
 });
 
-function canMove(tempX, vacantX, tempY, vacantY) {
-    return (tempX + 100 == vacantX && tempY == vacantY) ||
-        (tempX - 100 == vacantX && tempY == vacantY) ||
-        (tempY + 100 == vacantY && tempX == vacantX) ||
-        (tempY - 100 == vacantY && tempX == vacantX);
+function Moveable(tempX, varx, tempY, vary) {
+    "use strict";
+    return (tempX + 100 == varx && tempY == vary) ||
+        (tempX - 100 == varx && tempY == vary) ||
+        (tempY + 100 == vary && tempX == varx) ||
+        (tempY - 100 == vary && tempX == varx);
 }
 
-function TileMoveFunc(tile, vacantX, vacantY, tempX, tempY) {
-    $(tile).attr("x", vacantX);
-    $(tile).attr("y", vacantY);
-    let x = vacantX;
-    let y = vacantY;
+
+function MoveTile(tile, varx, vary, tempX, tempY) {
+    "use strict";
+    $(tile).attr("x", varx);
+    $(tile).attr("y", vary);
+    let x = varx;
+    let y = vary;
 
     $(tile).css({
         "left": x + 'px',
@@ -83,48 +86,8 @@ function TileMoveFunc(tile, vacantX, vacantY, tempX, tempY) {
         "backgroundImage": 'url("images/background.jpg")',
     });
 
-    $(tile).attr("id", "square_" + vacantX + "_" + vacantY);
-    vacantX = tempX;
-    vacantY = tempY;
-    return { vacantX, vacantY };
+    $(tile).attr("id", "square_" + varx + "_" + vary);
+    varx = tempX;
+    vary = tempY;
+    return { varx, vary };
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
