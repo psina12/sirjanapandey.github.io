@@ -1,14 +1,11 @@
 var express = require('express');
 var app = express();
 const bodyParser = require('body-parser');
-let index = 0;
-let score = 0;
-
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
-//set view engine
 app.set("view engine", "pug");
+
+let i = 0;
+let score = 0;
 
 const questions = [
     "1, 1, 2, 3, 5", //fibonacci
@@ -21,34 +18,32 @@ const answers = [8, 36, 13, 32];
 
 app.get('/', function(req, res) {
 
-    res.render('index', {
+    res.render('i', {
         score: score,
-        sequence: questions[index],
-        index: index,
+        sequence: questions[i],
+        i: i,
     });
 });
 
 
 app.post('/enter', (req, res) => {
     const body = req.body;
-    let index = body.index;
+    let i = body.i;
     let score = body.score;
 
-    score = body.answer == answers[index] ? ++score : score;
+    score = body.answer == answers[i] ? ++score : score;
 
-
-    console.log(body);
-    if (index == questions.length - 1) {
-        res.render('result', {
+    if (i == questions.length - 1) {
+        res.render('output', {
             score: score,
             total: questions.length
         });
 
     } else {
-        res.render('index', {
+        res.render('i', {
             score: score,
-            index: ++index,
-            sequence: questions[index]
+            i: ++i,
+            sequence: questions[i]
         });
     }
 });
