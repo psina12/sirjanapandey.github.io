@@ -29,7 +29,7 @@ app.get('/', function(req, res) {
 });
 
 
-app.post('/check', (req, res) => {
+app.post('/enter', (req, res) => {
     const body = req.body;
     let index = body.index;
     let score = body.score;
